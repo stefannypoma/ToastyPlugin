@@ -1,4 +1,4 @@
-package com.stefannypoma.cordova.plugin.ToastyPlugin;
+package com.stefannypoma.cordova.plugin;
 // The native Toast API
 import android.widget.Toast;
 // Cordova-required packages
@@ -22,7 +22,7 @@ public class ToastyPlugin extends CordovaPlugin {
       String duration;
       try {
         JSONObject options = args.getJSONObject(0);
-        message = options.getString("message");
+        message = "PLG: " + options.getString("message");
         duration = options.getString("duration");
       } catch (JSONException e) {
         callbackContext.error("Error encountered: " + e.getMessage());
